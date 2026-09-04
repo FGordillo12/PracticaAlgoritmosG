@@ -1,1 +1,21 @@
 import random
+
+# Datos de los 10 proyectos posibles (Costo, Retorno)
+proyectos = [
+    (10, 15), (20, 35), (15, 20), (30, 45), (25, 30),
+    (40, 50), (10, 25), (35, 60), (20, 40), (50, 70)
+
+]
+
+PREMAXIMO = 100
+
+def decodificar_y_evaluar_e1(cromosoma):
+    costo_total = sum(proyectos[i][0] * gen for i, gen in enumerate(cromosoma))
+    retorno_total = sum(proyectos[i][1] * gen for i, gen in enumerate(cromosoma))
+    
+    # Penalización fuerte si se excede el limite del presupuesto máximo
+    if costo_total > PREMAXIMO:
+        penalizacion = (costo_total - PREMAXIMO) * 10
+        return max(0, retorno_total - penalizacion), # Retorna tupla para compatibilidad 
+        
+    return retorno_total,
