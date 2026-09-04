@@ -1,3 +1,9 @@
+#Ejercicio 1 - Portafolio de Inversiones
+"""En este ejercicio, se plantea la funcion de mapeo en donde este es el que traduce el genotipo binario al espacio de busqueda
+de busqueda de los proyectos, llegando a evuluar el costo y el retorno de la inversion. En donde si el cromosoma excede el
+el presupuesto, la formula matematica aplica la penalizacion establecida"""
+
+
 import random
 
 # Datos de los 10 proyectos posibles (Costo, Retorno)
