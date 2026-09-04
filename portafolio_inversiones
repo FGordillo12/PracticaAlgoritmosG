@@ -16,6 +16,10 @@ def decodificar_y_evaluar_e1(cromosoma):
     # Penalización fuerte si se excede el limite del presupuesto máximo
     if costo_total > PREMAXIMO:
         penalizacion = (costo_total - PREMAXIMO) * 10
-        return max(0, retorno_total - penalizacion), # Retorna tupla para compatibilidad 
+        return max(0, retorno_total - penalizacion), # Retorna tupla 
         
     return retorno_total,
+
+# Ejemplo de cromosoma binario de 10 bits
+cromosoma_ej = [random.randint(0, 1) for _ in range(10)]
+print(f"Cromosoma: {cromosoma_ej} | Aptitud: {decodificar_y_evaluar_e1(cromosoma_ej)}")
